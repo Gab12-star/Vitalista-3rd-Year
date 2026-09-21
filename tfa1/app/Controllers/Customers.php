@@ -6,34 +6,34 @@ class Customers extends BaseController
 {
     public function index()
     {
-        $customers = [
+        $data['customers'] = [
             [
-                'fullname' => 'Juan Dela Cruz',
-                'email' => 'juan@gmail.com',
-                'phone' => '09171234567'
+                'name' => 'Carl Gabriel Vitalista',
+                'email' => 'carl.vitalista@example.com',
+                'phone' => '09171234567',
             ],
             [
-                'fullname' => 'Maria Santos',
-                'email' => 'maria@gmail.com',
-                'phone' => '09181234567'
+                'name' => 'Anne Cruz',
+                'email' => 'anne.cruz@example.com',
+                'phone' => '09181234567',
             ],
             [
-                'fullname' => 'Pedro Reyes',
-                'email' => 'pedro@gmail.com',
-                'phone' => '09191234567'
+                'name' => 'Mark Santos',
+                'email' => 'mark.santos@example.com',
+                'phone' => '09191234567',
             ],
             [
-                'fullname' => 'Ana Garcia',
-                'email' => 'ana@gmail.com',
-                'phone' => '09201234567'
+                'name' => 'Jessa Reyes',
+                'email' => 'jessa.reyes@example.com',
+                'phone' => '09201234567',
             ],
             [
-                'fullname' => 'Mark Lopez',
-                'email' => 'mark@gmail.com',
-                'phone' => '09211234567'
-            ]
+                'name' => 'Kevin Lim',
+                'email' => 'kevin.lim@example.com',
+                'phone' => '09211234567',
+            ],
         ];
 
-        return view('customers', ['customers' => $customers]);
+        return view('customers', $data);
     }
 }

@@ -1,37 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>User Accounts</title>
-</head>
-<body>
+<?= $this->include('partials/nav') ?>
 
-<h1>User Accounts</h1>
+<main class="dashboard">
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">STAFF DIRECTORY</p>
+            <h1>User Accounts</h1>
+            <p class="subtext">System users and staff roles from static PHP array data.</p>
+        </div>
 
-<nav>
-    /Vitalista-3rd-Year/tfa1/public/Home</a> |
-    /Vitalista-3rd-Year/tfa1/public/aboutAbout</a> |
-    /Vitalista-3rd-Year/tfa1/public/customersCustomers</a> |
-    /Vitalista-3rd-Year/tfa1/public/usersUsers</a>
-</nav>
+        <div class="record-count">5 Users</div>
+    </header>
 
-<hr>
+    <section class="list-panel">
+        <div class="panel-heading">
+            <h2>Staff User List</h2>
+            <span>Username · Full Name · Role</span>
+        </div>
 
-<table border="1" cellpadding="8">
-    <tr>
-        <th>Username</th>
-        <th>Full Name</th>
-        <th>Role</th>
-    </tr>
+        <div class="customer-list">
+            <?php foreach ($users as $user): ?>
+                <article class="person-row">
+                    <div class="avatar user-avatar">
+                        <?= esc(strtoupper(substr($user['name'], 0, 1))) ?>
+                    </div>
 
-    <?php foreach ($users as $user): ?>
-    <tr>
-        <td><?= $user['username']; ?></td>
-        <td><?= $user['fullname']; ?></td>
-        <td><?= $user['role']; ?></td>
-    </tr>
-    <?php endforeach; ?>
+                    <div class="person-name">
+                        <strong><?= esc($user['name']) ?></strong>
+                        <small>@<?= esc($user['username']) ?></small>
+                    </div>
 
-</table>
+                    <div class="person-detail">
+                        <small>Username</small>
+                        <span><?= esc($user['username']) ?></span>
+                    </div>
 
-</body>
-</html>
+                    <div class="person-detail">
+                        <small>System Role</small>
+                        <span class="role"><?= esc($user['role']) ?></span>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+</main>

@@ -1,22 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About</title>
-</head>
-<body>
+<?= $this->include('partials/nav') ?>
 
-<h1>About</h1>
+<main class="dashboard">
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">SYSTEM INFORMATION</p>
+            <h1>About Pointify POS</h1>
+        </div>
+    </header>
 
-<nav>
-    /Vitalista-3rd-Year/tfa1/public/Home</a> |
-    /Vitalista-3rd-Year/tfa1/public/aboutAbout</a> |
-    /Vitalista-3rd-Year/tfa1/public/customersCustomers</a> |
-    /Vitalista-3rd-Year/tfa1/public/usersUsers</a>
-</nav>
+    <section class="about-layout">
+        <div class="about-intro">
+            <span class="big-icon">ⓘ</span>
+            <h2>Basic Point-of-Sale System</h2>
+            <p>
+                This is the first version of a Point-of-Sale website developed
+                using the CodeIgniter 4 framework.
+            </p>
+        </div>
 
-<hr>
+        <div class="about-list">
+            <div>
+                <span>01</span>
+                <p><strong>Landing Page</strong>Dashboard overview of the POS system.</p>
+            </div>
 
-<p>This is the first version of the POS System built with CodeIgniter 4.</p>
+            <div>
+                <span>02</span>
+                <p><strong>Customer Accounts</strong>Displays full name, email, and phone number.</p>
+            </div>
 
-</body>
-</html>
+            <div>
+                <span>03</span>
+                <p><strong>User Accounts</strong>Displays username, full name, and staff role.</p>
+            </div>
+
+            <div>
+                <span>04</span>
+                <p><strong>Temporary Data</strong>Uses static PHP arrays without a database.</p>
+            </div>
+        </div>
+    </section>
+</main>

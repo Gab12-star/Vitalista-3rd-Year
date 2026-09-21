@@ -1,4 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteRule ^(.*)$ public/$1 [L]
+
+    RewriteRule ^tfa1/public/ - [L]
+    RewriteRule ^tfa1/(.*)$ tfa1/public/$1 [L]
 </IfModule>

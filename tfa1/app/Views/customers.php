@@ -1,37 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Customer Accounts</title>
-</head>
-<body>
+<?= $this->include('partials/nav') ?>
 
-<h1>Customer Accounts</h1>
+<main class="dashboard">
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">ACCOUNT DIRECTORY</p>
+            <h1>Customer Accounts</h1>
+            <p class="subtext">Registered customer information from static PHP array data.</p>
+        </div>
 
-<nav>
-    /Vitalista-3rd-Year/tfa1/public/Home</a> |
-    /Vitalista-3rd-Year/tfa1/public/aboutAbout</a> |
-    /Vitalista-3rd-Year/tfa1/public/customersCustomers</a> |
-    /Vitalista-3rd-Year/tfa1/public/usersUsers</a>
-</nav>
+        <div class="record-count">5 Customers</div>
+    </header>
 
-<hr>
+    <section class="list-panel">
+        <div class="panel-heading">
+            <h2>Customer List</h2>
+            <span>Full Name · Email · Phone</span>
+        </div>
 
-<table border="1" cellpadding="8">
-    <tr>
-        <th>Full Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-    </tr>
+        <div class="customer-list">
+            <?php foreach ($customers as $customer): ?>
+                <article class="person-row">
+                    <div class="avatar">
+                        <?= esc(strtoupper(substr($customer['name'], 0, 1))) ?>
+                    </div>
 
-    <?php foreach ($customers as $customer): ?>
-    <tr>
-        <td><?= $customer['fullname']; ?></td>
-        <td><?= $customer['email']; ?></td>
-        <td><?= $customer['phone']; ?></td>
-    </tr>
-    <?php endforeach; ?>
+                    <div class="person-name">
+                        <strong><?= esc($customer['name']) ?></strong>
+                        <small>Customer Account</small>
+                    </div>
 
-</table>
+                    <div class="person-detail">
+                        <small>Email Address</small>
+                        <span><?= esc($customer['email']) ?></span>
+                    </div>
 
-</body>
-</html>
+                    <div class="person-detail">
+                        <small>Phone Number</small>
+                        <span><?= esc($customer['phone']) ?></span>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+</main>
