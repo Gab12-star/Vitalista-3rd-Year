@@ -5,10 +5,10 @@
         <div>
             <p class="eyebrow">ACCOUNT DIRECTORY</p>
             <h1>Customer Accounts</h1>
-            <p class="subtext">Registered customer information from static PHP array data.</p>
+            <p class="subtext">Registered customer information from MySQL database.</p>
         </div>
 
-        <div class="record-count">5 Customers</div>
+        <div class="record-count"><?= count($customers) ?> Customers</div>
     </header>
 
     <section class="list-panel">
@@ -21,11 +21,11 @@
             <?php foreach ($customers as $customer): ?>
                 <article class="person-row">
                     <div class="avatar">
-                        <?= esc(strtoupper(substr($customer['name'], 0, 1))) ?>
+                        <?= esc(strtoupper(substr($customer['full_name'], 0, 1))) ?>
                     </div>
 
                     <div class="person-name">
-                        <strong><?= esc($customer['name']) ?></strong>
+                        <strong><?= esc($customer['full_name']) ?></strong>
                         <small>Customer Account</small>
                     </div>
 
